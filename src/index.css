@@ -1,3 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Painted on html/body so the dark background is there before React mounts --
+   otherwise the page flashes white on load. */
+html {
+  background-color: #020617;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #020617;
+  margin: 0;
+}
+
+/* Respect a reader's reduced-motion setting: the reveal animations are
+   decoration, and should never be the reason someone cannot use the page. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+::selection { background: rgba(34, 211, 238, 0.3); }
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #020617; }
+::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: #334155; }

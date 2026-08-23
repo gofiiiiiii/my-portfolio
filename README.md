@@ -1,16 +1,29 @@
-# React + Vite
+# Portfolio — Gopi Krishna N
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio site. React + Vite + Tailwind, deployed to Azure App Service.
 
-Currently, two official plugins are available:
+Showcases 20 applied machine learning, computer vision, NLP and full stack projects,
+each with results measured on held-out data. Source for all of them:
+**[gopi-krishna-ai/internship-projects](https://github.com/gopi-krishna-ai/internship-projects)**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Local development
 
-## React Compiler
+```bash
+npm install
+npm run dev
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm run build
+```
 
-## Expanding the ESLint configuration
+## Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| Path | What it holds |
+|---|---|
+| `src/App.jsx` | The whole page — nav, hero, about, projects, skills, contact |
+| `src/data/projects.js` | Project list, metrics, skills and stats. **Edit this to add a project** — no component changes needed |
+| `src/index.css` | Tailwind entry, plus the dark background and reduced-motion handling |
+
+Every metric in `projects.js` matches the corresponding `model/metrics.json` in the
+projects repository. If you update a model, update the number here too.
