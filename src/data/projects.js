@@ -12,7 +12,7 @@ export const REPO = "https://github.com/gopi-krishna-ai/internship-projects";
 // deployable rather than shipped as demos that fall over.
 export const DEPLOYABLE = 12;
 
-const path = (folder) => `${REPO}/tree/main/projects/${encodeURIComponent(folder)}`;
+const path = (folder) => `${REPO}/tree/main/projects/${folder}`;
 
 export const categories = [
   { id: "all", label: "All" },
@@ -35,7 +35,7 @@ export const projects = [
     stack: ["Random Forest", "Flask", "SQLite", "scikit-learn"],
     highlight:
       "My first model scored 95.5% but rated google.com as 96.5% malicious — it had learned an artifact of how the dataset was collected. Fixing that, then pruning the forest from 262 MB to 51 MB so it could actually ship, left it at 88.1%.",
-    url: path("B-22-Cybersecurity Toolkit"),
+    url: path("B-22-cybersecurity-toolkit"),
     featured: true,
   },
   {
@@ -49,7 +49,7 @@ export const projects = [
     stack: ["FastAPI", "Transformers", "LangGraph", "SQLite"],
     highlight:
       "RAG is verified by planting a fact no model could know, then checking it comes back with retrieval switched on and does not without it.",
-    url: path("B-19-AI Hub Local Multi Model AI Workspace"),
+    url: path("B-19-hub-local-multi-model"),
     featured: true,
   },
   {
@@ -63,7 +63,7 @@ export const projects = [
     stack: ["PyTorch", "CNN", "Flask"],
     highlight:
       "The CNN I built from scratch beat a frozen MobileNetV2 transfer-learning baseline by 5.25 points.",
-    url: path("B-21-BinBrain AI Smart Waste Classification"),
+    url: path("B-21-binbrain-waste-classification"),
     featured: true,
   },
   {
@@ -77,7 +77,7 @@ export const projects = [
     stack: ["Flask", "Pandas", "Excel", "Bootstrap"],
     highlight:
       "Testing caught a dashboard bug that showed a healthy blood supply while four individual banks sat at zero units.",
-    url: path("B-18-Smart Blood Bank and Doctor Management System"),
+    url: path("B-18-blood-bank-doctor-management"),
     featured: true,
   },
   {
@@ -91,7 +91,7 @@ export const projects = [
     stack: ["scikit-learn", "Gradient Boosting", "Flask", "Pandas"],
     highlight:
       "I tested locality price-encoding and found it made predictions worse — R² 0.702 down to 0.624 — so I removed it.",
-    url: path("B-17-RentMate AI Powered Smart Rental Marketplace"),
+    url: path("B-17-rentmate-rental-marketplace"),
   },
   {
     name: "Fake Job Detection",
@@ -104,7 +104,7 @@ export const projects = [
     stack: ["Random Forest", "XGBoost", "TF-IDF", "NLTK"],
     highlight:
       "Only 276 of 17,880 training postings were Indian, so every India-specific rule is labelled either measured or domain knowledge.",
-    url: path("B-14-AI Driven Fake Job and Scam Detection"),
+    url: path("B-14-driven-fake-job-scam"),
   },
   {
     name: "GuardPath AI",
@@ -115,7 +115,7 @@ export const projects = [
     metric: "207,617 alerts",
     metricNote: "real Bangalore CAS data",
     stack: ["Random Forest", "Flask", "Leaflet"],
-    url: path("B-1-GuardPath AI"),
+    url: path("B-1-guardpath"),
   },
   {
     name: "Weed Detection",
@@ -126,7 +126,7 @@ export const projects = [
     metric: "mAP50 0.877",
     metricNote: "precision 0.849 · recall 0.834",
     stack: ["YOLOv8", "PyTorch", "OpenCV"],
-    url: path("B-3-Automated Weed Detection System Using YOLO"),
+    url: path("B-3-automated-weed-detection-yolo"),
   },
   {
     name: "TracePoint",
@@ -137,7 +137,7 @@ export const projects = [
     metric: "0.339 distance",
     metricNote: "matched the same person across photos",
     stack: ["YOLOv8", "dlib", "Tesseract", "scikit-learn"],
-    url: path("B-11-TracePoint AI Investigation and Recovery Platform"),
+    url: path("B-11-tracepoint-investigation-recovery-platform"),
   },
   {
     name: "Cricket Performance Analyser",
@@ -150,7 +150,7 @@ export const projects = [
     stack: ["Random Forest", "XGBoost", "K-Means"],
     highlight:
       "I rejected the first dataset after testing showed it was randomly generated — correlation between past and future runs was 0.014.",
-    url: path("B-6-AI Cricket Performance Analyser"),
+    url: path("B-6-cricket-performance-analyser"),
   },
   {
     name: "Smart Voting System",
@@ -161,7 +161,7 @@ export const projects = [
     metric: "98.39%",
     metricNote: "on the LFW benchmark",
     stack: ["face_recognition", "dlib", "Flask"],
-    url: path("B-7-Smart Voting System Through Facial Recognition"),
+    url: path("B-7-voting-through-facial-recognition"),
   },
   {
     name: "Attendance System",
@@ -172,7 +172,7 @@ export const projects = [
     metric: "98.39%",
     metricNote: "on the LFW benchmark",
     stack: ["face_recognition", "OpenCV", "Flask"],
-    url: path("B-13-Face Recognition Attendance System"),
+    url: path("B-13-face-recognition-attendance"),
   },
   {
     name: "Notes & PDF Analysis",
@@ -183,7 +183,7 @@ export const projects = [
     metric: "EM 69.0 / F1 77.9",
     metricNote: "on SQuAD",
     stack: ["DistilBERT", "Sentence-Transformers", "PyMuPDF"],
-    url: path("B-8-AI Learning Intelligence for Notes and PDF Analysis"),
+    url: path("B-8-learning-intelligence-notes-pdf"),
   },
   {
     name: "Content Creator Assistant",
@@ -194,7 +194,7 @@ export const projects = [
     metric: "ROUGE benchmarked",
     metricNote: "on CNN/DailyMail",
     stack: ["Transformers", "FLAN-T5", "Flask", "SQLite"],
-    url: path("B-16-AI Content Creator Assistant"),
+    url: path("B-16-content-creator-assistant"),
   },
   {
     name: "ResQAI",
@@ -205,7 +205,7 @@ export const projects = [
     metric: "F1 0.780",
     metricNote: "SVM beat 3 other classifiers",
     stack: ["scikit-learn", "TF-IDF", "Flask"],
-    url: path("B-9-ResQAI Intelligent Disaster Relief Management"),
+    url: path("B-9-resqai-disaster-relief-management"),
   },
   {
     name: "Surplus Food Redistribution",
@@ -216,7 +216,7 @@ export const projects = [
     metric: "R² 0.925",
     metricNote: "Gradient Boosting",
     stack: ["scikit-learn", "Flask", "Pandas"],
-    url: path("B-10-AI Smart Surplus Food Redistribution"),
+    url: path("B-10-surplus-food-redistribution"),
   },
   {
     name: "CloudCost Optimizer",
@@ -227,7 +227,7 @@ export const projects = [
     metric: "99.0% / R² 0.694",
     metricNote: "classification / latency prediction",
     stack: ["Random Forest", "XGBoost", "Plotly"],
-    url: path("B-12-CloudCost AI Intelligent Cost and Resource Optimizer"),
+    url: path("B-12-cloudcost-cost-resource-optimizer"),
   },
   {
     name: "QR Code Scam Detection",
@@ -238,7 +238,7 @@ export const projects = [
     metric: "Malicious URL classifier",
     metricNote: "TF-IDF + Logistic Regression",
     stack: ["OpenCV", "scikit-learn", "Flask"],
-    url: path("B-5-QR Code Scam Detection"),
+    url: path("B-5-qr-code-scam-detection"),
   },
   {
     name: "Sentiment Analysis",
@@ -249,7 +249,7 @@ export const projects = [
     metric: "TF-IDF + LogReg",
     metricNote: "1.6M tweets",
     stack: ["scikit-learn", "NLTK", "Flask"],
-    url: path("B-4-Real Time Sentiment Analysis"),
+    url: path("B-4-real-time-sentiment-analysis"),
   },
   {
     name: "Smart Study Planner",
@@ -260,7 +260,7 @@ export const projects = [
     metric: "83% accuracy",
     metricNote: "30,641 student records",
     stack: ["Random Forest", "Flask", "Pandas"],
-    url: path("B-2-AI Assisted Smart Study Planner"),
+    url: path("B-2-assisted-study-planner"),
   },
 ];
 
