@@ -6,6 +6,12 @@
 
 export const REPO = "https://github.com/gopi-krishna-ai/internship-projects";
 
+// Projects whose dependencies fit a free Render instance. Defined in render.yaml at the
+// repo root — one Blueprint deploy creates all twelve. The remaining eight need PyTorch,
+// dlib or ultralytics and would crash on a 512 MB box, so they are not listed as
+// deployable rather than shipped as demos that fall over.
+export const DEPLOYABLE = 12;
+
 const path = (folder) => `${REPO}/tree/main/projects/${encodeURIComponent(folder)}`;
 
 export const categories = [
@@ -24,11 +30,11 @@ export const projects = [
     category: "ml",
     blurb:
       "Phishing URL detection, password strength analysis, file integrity hashing, port scanning and security log analysis in one dashboard.",
-    metric: "F1 90.3%",
+    metric: "F1 88.1%",
     metricNote: "641,113 URLs · 25/25 tests pass",
     stack: ["Random Forest", "Flask", "SQLite", "scikit-learn"],
     highlight:
-      "My first model scored 95.5% but rated google.com as 96.5% malicious. It had learned an artifact of how the dataset was collected, not anything about real phishing.",
+      "My first model scored 95.5% but rated google.com as 96.5% malicious — it had learned an artifact of how the dataset was collected. Fixing that, then pruning the forest from 262 MB to 51 MB so it could actually ship, left it at 88.1%.",
     url: path("B-22-Cybersecurity Toolkit"),
     featured: true,
   },

@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from "react";
-import { projects, categories, stats, skills, REPO } from "./data/projects";
+import { projects, categories, stats, skills, REPO, DEPLOYABLE } from "./data/projects";
 
 const LINKS = {
   github: "https://github.com/gopi-krishna-ai",
@@ -338,9 +338,16 @@ export default function Portfolio() {
               In the training data, 91.7% of safe URLs had been stored without{" "}
               <code className="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-300">http://</code>{" "}
               while 66.9% of malicious ones had it. The model had learned how somebody
-              assembled a spreadsheet, not how phishing works. I fixed the features, the
-              score dropped to <span className="text-white">90.3%</span> — and that lower
-              number is the one I trust.
+              assembled a spreadsheet, not how phishing works. I fixed the features and the
+              score dropped to <span className="text-white">90.3%</span>.
+            </p>
+            <p className="mt-3 text-sm leading-relaxed text-slate-400">
+              Then a second problem: the forest serialised to 262&nbsp;MB, too large for
+              GitHub, so nobody could clone the project and run it. Pruning it to 51&nbsp;MB
+              cost another 2.2 points, leaving{" "}
+              <span className="text-white">88.1%</span>. A model nobody can run has an
+              effective accuracy of zero, so that was worth paying — and 88.1% is the number
+              I stand behind.
             </p>
           </div>
         </Reveal>
@@ -377,6 +384,32 @@ export default function Portfolio() {
             <ProjectCard key={p.name} p={p} delay={Math.min(i, 5) * 60} />
           ))}
         </div>
+
+        {/* how to run these */}
+        <Reveal>
+          <div className="mt-14 rounded-2xl border border-slate-800 bg-slate-900/50 p-6">
+            <h3 className="font-bold text-white">Want to run one?</h3>
+            <p className="mt-3 text-sm leading-relaxed text-slate-400">
+              Trained models are committed, so every project runs straight from a clone —
+              no dataset download, no training step. {DEPLOYABLE} of the {projects.length}{" "}
+              also deploy to a free Render instance from the{" "}
+              <code className="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-300">render.yaml</code>{" "}
+              blueprint in the repo.
+            </p>
+            <p className="mt-3 text-sm leading-relaxed text-slate-400">
+              The other {projects.length - DEPLOYABLE} need PyTorch, dlib or ultralytics and
+              would crash on a 512&nbsp;MB box, so I have not dressed them up as live demos
+              that fall over. They belong on Hugging Face Spaces or a larger instance.
+            </p>
+            <div className="mt-5 overflow-x-auto">
+              <pre className="rounded-xl border border-slate-800 bg-slate-950 p-4 text-xs
+                              leading-relaxed text-slate-300"><code>{`git clone ${REPO.replace("https://github.com/", "https://github.com/")}.git
+cd "internship-projects/projects/B-18-Smart Blood Bank and Doctor Management System"
+pip install -r requirements.txt
+python app.py`}</code></pre>
+            </div>
+          </div>
+        </Reveal>
 
         {/* earlier work */}
         <Reveal>
